@@ -1,10 +1,6 @@
 language: python
 dist: bionic
-os: 
-    - linux
-arch: 
-    - amd64
-    - arm64
+
 services:
   - xvfb
 env:
@@ -23,6 +19,8 @@ before_install:
 matrix:
   include:
     - python: "3.8"
+    - os: linux
+    - arch: arm64
       env:
         - BROWSER=headlesschrome
         - SELENIUM=3.141.0
